@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+// ordem crescente e decrescente
+int main()
+{
+    int i, n, j, aux, vetor[100];
+    cout << "Digite um numero" << endl;
+    cin >> n;
+    cout << "Digite " << n << " numeros " << endl;
+    //inicializacao do vetor
+    for (i=0; i<n; i++)
+    {
+        cin >> vetor[i];
+    }
+    //ordenacao do vetor crescente
+    for (i=0; i<n; i++)
+    {
+        for (j=0; j<n; j++)
+        {
+            if (vetor[i] < vetor[j])
+            {
+                aux = vetor[j];
+                vetor[j] = vetor[i];
+                vetor[i] = aux;
+            }
+        }
+    }
+    cout << "Ordenado crescente: " << endl;
+    for(i=0; i<n; i++)
+    {
+        cout << vetor[i] << endl;
+    }
+    //ordenacao do vetor decrescente
+    for (i=0; i<n; i++)
+    {
+        for (j=0; j<n; j++)
+        {
+            if (vetor[i] > vetor[j])
+            {
+                aux = vetor[j];
+                vetor[j] = vetor[i];
+                vetor[i] = aux;
+            }
+        }
+    }
+    cout << "Ordenado decrescente: " << endl;
+    for(i=0; i<n; i++)
+    {
+        cout << vetor[i] << endl;
+    }
+    return 0;
+}
